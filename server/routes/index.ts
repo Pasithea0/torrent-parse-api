@@ -12,7 +12,7 @@ export default eventHandler(async (event) => {
     .map(item => {
       if (!item.title || !item.url) return null;
       const parsed = parse(item.title) as any;
-      if (parsed && parsed.codec === 'x264') {
+      if (parsed && (parsed.codec === 'x264' || parsed.codec === 'h265' || parsed.codec === 'h264')) {
         return { ...parsed, url: item.url };
       }
       return null;

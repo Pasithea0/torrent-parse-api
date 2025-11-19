@@ -1,4 +1,5 @@
-const moment = require("moment");
+const momentImport = require("moment");
+const moment = momentImport.default || momentImport;
 
 exports.none = input => input;
 
